@@ -1,0 +1,17 @@
+#!/usr/bin/env ruby
+# frozen_string_literal: true
+
+# !/usr/bin/env ruby
+
+require "bundler/setup"
+require "macos"
+
+mouse = MacOS.mouse
+
+mouse.move(x: 0, y: 0)
+position = mouse.position
+puts "#{position.x},#{position.y}"
+
+mouse.move(x: 2, y: 3)
+position = mouse.position
+puts "#{position.x},#{position.y}"

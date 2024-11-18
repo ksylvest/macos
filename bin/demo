@@ -1,0 +1,14 @@
+#!/usr/bin/env ruby
+# frozen_string_literal: true
+
+require "bundler/setup"
+require "macos"
+
+mouse = MacOS.mouse
+
+loop do
+  puts mouse.position
+
+  mouse.move(x: 20.0, y: 20.0)
+  sleep 5
+end
