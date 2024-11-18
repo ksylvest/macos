@@ -1,0 +1,18 @@
+#!/usr/bin/env ruby
+# frozen_string_literal: true
+
+# !/usr/bin/env ruby
+
+require "bundler/setup"
+require "macos"
+
+display = MacOS.display
+
+puts "id = #{display.id}"
+puts "wide = #{display.wide}"
+puts "high = #{display.high}"
+puts "bounds = #{display.bounds.width}×#{display.bounds.height}"
+
+display.screenshot do |tempfile|
+  `open -a Preview "#{tempfile.path}"`
+end
